@@ -1,0 +1,526 @@
+/* GLOBAL */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #ba4949, #9f3e3e);
+  color: white;
+}
+/* Hide scrollbar but allow scrolling */
+
+/* Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+body {
+  scrollbar-width: none;
+}
+
+/* IE and old Edge */
+body {
+  -ms-overflow-style: none;
+}
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* HEADER */
+
+.header {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  position: relative;
+  z-index: 2000;
+}
+
+.header-container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+/* NAVIGATION */
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* TIMER CARD */
+
+.timer {
+  max-width: 420px;
+  width: 92%;
+
+  margin: 40px auto;
+  padding: 25px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+/* TABS */
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.tabs button {
+  background: transparent;
+  border: none;
+  padding: 8px 16px;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.tabs .active {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+
+/* PROGRESS RING */
+
+.progress-ring {
+  position: relative;
+
+  width: 180px;
+  height: 180px;
+
+  margin: 20px auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring svg {
+  width: 180px;
+  height: 180px;
+
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+
+.ring-progress {
+  transition: stroke-dashoffset 1s linear;
+}
+
+/* TIMER NUMBER */
+
+.timer-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  font-size: 44px;
+  font-weight: 700;
+}
+
+/* TIMER BUTTONS */
+
+.timer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.start-button {
+  padding: 12px 32px;
+  border-radius: 8px;
+  border: none;
+
+  font-size: 16px;
+
+  background: white;
+  color: #ba4949;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.stop-button {
+  padding: 12px 24px;
+
+  border-radius: 8px;
+  border: none;
+
+  background: #2f2f2f;
+  color: white;
+
+  cursor: pointer;
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* SHARE BUTTON */
+
+.share-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.share-btn {
+  padding: 10px 20px;
+
+  border-radius: 8px;
+  border: none;
+
+  background: white;
+
+  cursor: pointer;
+}
+
+/* TASKS */
+
+.tasks {
+  max-width: 420px;
+  width: 92%;
+  margin: 40px auto;
+}
+
+.task-input {
+  display: flex;
+  gap: 10px;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 10px;
+
+  border: none;
+  border-radius: 6px;
+}
+
+.task-input button {
+  padding: 10px 16px;
+
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.task.done span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.delete-btn {
+  margin-left: auto;
+
+  background: none;
+  border: none;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+/* STATS */
+
+.stats {
+  max-width: 420px;
+  width: 92%;
+  margin: 40px auto;
+
+  text-align: center;
+}
+
+/* DAILY PROGRESS */
+
+.progress {
+  max-width: 420px;
+  width: 92%;
+  margin: 40px auto;
+
+  text-align: center;
+}
+
+.progress-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dot.done {
+  background: white;
+}
+
+/* BLOG / PAGE */
+
+.page,
+.blog {
+  max-width: 850px;
+  width: 90%;
+  margin: 70px auto;
+
+  line-height: 1.8;
+  text-align: left;
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: 80px;
+  padding: 30px;
+
+  text-align: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+}
+
+/* LOADER */
+
+.loader-container {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid white;
+
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* MOBILE MENU */
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+
+    background: #ba4949;
+
+    flex-direction: column;
+
+    width: 200px;
+
+    padding: 20px;
+    gap: 20px;
+
+    display: none;
+
+    z-index: 3000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* TIMER MOBILE */
+
+  .timer {
+    max-width: 340px;
+    padding: 20px;
+  }
+
+  /* TABS */
+
+  .tabs {
+    gap: 6px;
+  }
+
+  .tabs button {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  /* PROGRESS RING */
+
+  .progress-ring {
+    width: 150px;
+    height: 150px;
+  }
+
+  .progress-ring svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* TIMER TEXT */
+
+  .timer-display {
+    font-size: 34px;
+  }
+
+  /* BUTTONS */
+
+  .timer-buttons button {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  /* CONTENT WIDTH */
+
+  .timer,
+  .tasks,
+  .stats,
+  .progress {
+    margin: 20px auto;
+  }
+}
+
+/* STICKY MOBILE CONTROLS */
+
+.mobile-controls {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    background: #ba4949;
+
+    display: flex;
+    justify-content: space-around;
+
+    padding: 12px;
+
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.25);
+
+    z-index: 5000;
+  }
+
+  .mobile-controls button {
+    flex: 1;
+
+    margin: 0 5px;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: white;
+
+    font-weight: 600;
+  }
+
+  body {
+    padding-bottom: 70px;
+  }
+}
